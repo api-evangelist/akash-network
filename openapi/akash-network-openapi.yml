@@ -1,0 +1,109 @@
+openapi: 3.1.0
+info:
+  title: Akash Console API
+  version: "1.0.0"
+  description: |
+    REST API for the managed Akash Console. Deploy workloads to the
+    Akash decentralized cloud marketplace using managed wallets and
+    credit-card billing, without directly managing keys or AKT.
+  contact:
+    name: Akash Network
+    url: https://akash.network
+  license:
+    name: Documentation Terms
+    url: https://akash.network
+servers:
+  - url: https://console-api.akash.network
+    description: Akash Console API production
+tags:
+  - name: Deployments
+    description: Create and manage SDL-based deployments.
+  - name: Bids
+    description: Retrieve bids placed by Akash providers.
+  - name: Leases
+    description: Accept bids and manage leases with providers.
+paths:
+  /v1/deployments:
+    post:
+      tags: [Deployments]
+      summary: Create a deployment
+      description: Submit an SDL deployment manifest to create a new deployment on the Akash network.
+      operationId: createDeployment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sdl:
+                  type: string
+                  description: Stack Definition Language (SDL) manifest as YAML text.
+              required: [sdl]
+      responses:
+        "200":
+          description: Deployment created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dseq:
+                    type: string
+                    description: Deployment sequence identifier.
+  /v1/bids:
+    get:
+      tags: [Bids]
+      summary: List bids for a deployment
+      description: Returns bids placed by providers for a given deployment sequence.
+      operationId: listBids
+      parameters:
+        - in: query
+          name: dseq
+          required: true
+          schema:
+            type: string
+          description: Deployment sequence identifier.
+      responses:
+        "200":
+          description: List of bids.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /v1/leases:
+    post:
+      tags: [Leases]
+      summary: Accept a bid and create a lease
+      description: Accept a provider bid to create a lease that runs the deployment.
+      operationId: createLease
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dseq:
+                  type: string
+                gseq:
+                  type: integer
+                oseq:
+                  type: integer
+                provider:
+                  type: string
+              required: [dseq, provider]
+      responses:
+        "200":
+          description: Lease created.
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Akash Console API key passed on every request.
+security:
+  - ApiKeyAuth: []
