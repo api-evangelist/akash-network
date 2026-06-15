@@ -1,0 +1,357 @@
+{
+  "item": [
+    {
+      "id": "3488925e-777e-4bad-a62e-8305617e5934",
+      "name": "Deployments",
+      "description": {
+        "content": "Create and manage SDL-based deployments.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ce0f384e-a193-4256-b6ae-dae9c0cf06a1",
+          "name": "Create a deployment",
+          "request": {
+            "name": "Create a deployment",
+            "description": {
+              "content": "Submit an SDL deployment manifest to create a new deployment on the Akash network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "deployments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sdl\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d65ee2eb-56e8-4b42-aff1-6d097d538cc3",
+              "name": "Deployment created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "deployments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sdl\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"dseq\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8b03bfd7-9af1-427b-8327-490bf6677c40",
+      "name": "Bids",
+      "description": {
+        "content": "Retrieve bids placed by Akash providers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12868652-fba2-42fc-a631-391e2054a096",
+          "name": "List bids for a deployment",
+          "request": {
+            "name": "List bids for a deployment",
+            "description": {
+              "content": "Returns bids placed by providers for a given deployment sequence.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "bids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dseq",
+                  "value": "<string>",
+                  "description": "(Required) Deployment sequence identifier."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49ff3200-7da8-43cc-9985-f7797817667d",
+              "name": "List of bids.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "bids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dseq",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "041243d9-5d67-4993-b83e-23ac78618958",
+      "name": "Leases",
+      "description": {
+        "content": "Accept bids and manage leases with providers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74f3a778-4c8e-472d-ac27-c23357db2857",
+          "name": "Accept a bid and create a lease",
+          "request": {
+            "name": "Accept a bid and create a lease",
+            "description": {
+              "content": "Accept a provider bid to create a lease that runs the deployment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "leases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dseq\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"gseq\": \"<integer>\",\n  \"oseq\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a6d413e3-5b56-49b2-a4b7-d8a09719743d",
+              "name": "Lease created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "leases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dseq\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"gseq\": \"<integer>\",\n  \"oseq\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://console-api.akash.network",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c43f25a9-a352-406c-a75d-c1819069b9b6",
+    "name": "Akash Console API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the managed Akash Console. Deploy workloads to the\nAkash decentralized cloud marketplace using managed wallets and\ncredit-card billing, without directly managing keys or AKT.\n\n\nContact Support:\n Name: Akash Network",
+      "type": "text/plain"
+    }
+  }
+}
