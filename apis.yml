@@ -11,7 +11,7 @@ description: >-
   Cosmos-SDK chain accessible over gRPC / REST / RPC, the Provider API on each
   provider, an official Akash Blockchain SDK in Go and JavaScript/TypeScript,
   the Provider Console, and the akash CLI.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Decentralized Cloud
   - GPU
