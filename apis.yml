@@ -152,6 +152,10 @@ apis:
       - type: Application
         url: https://console.akash.network/
 common:
+  - type: DomainSecurity
+    url: security/akash-network-domain-security.yml
+  - type: Authentication
+    url: authentication/akash-network-authentication.yml
   - type: Website
     url: https://akash.network/
   - type: Documentation
@@ -164,6 +168,8 @@ common:
     url: https://console.akash.network/
   - type: LinkedIn
     url: https://www.linkedin.com/company/akash-network/
+  - url: https://akash.network/blog/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

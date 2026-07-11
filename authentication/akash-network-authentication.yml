@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/akash-network-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  description: Akash Console API key passed on every request.
+  sources:
+  - openapi/akash-network-openapi.yml
