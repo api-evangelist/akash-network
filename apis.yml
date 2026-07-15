@@ -152,6 +152,8 @@ apis:
       - type: Application
         url: https://console.akash.network/
 common:
+  - type: AgenticAccess
+    url: agentic-access/akash-network-agentic-access.yml
   - type: DomainSecurity
     url: security/akash-network-domain-security.yml
   - type: Authentication
