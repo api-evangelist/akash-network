@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Akash Console Bids API
+  version: 1.0.0
+  description: 'REST API for the managed Akash Console. Deploy workloads to the
+
+    Akash decentralized cloud marketplace using managed wallets and
+
+    credit-card billing, without directly managing keys or AKT.
+
+    '
+  contact:
+    name: Akash Network
+    url: https://akash.network
+  license:
+    name: Documentation Terms
+    url: https://akash.network
+servers:
+- url: https://console-api.akash.network
+  description: Akash Console API production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Bids
+  description: Retrieve bids placed by Akash providers.
+paths:
+  /v1/bids:
+    get:
+      tags:
+      - Bids
+      summary: List bids for a deployment
+      description: Returns bids placed by providers for a given deployment sequence.
+      operationId: listBids
+      parameters:
+      - in: query
+        name: dseq
+        required: true
+        schema:
+          type: string
+        description: Deployment sequence identifier.
+      responses:
+        '200':
+          description: List of bids.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Akash Console API key passed on every request.

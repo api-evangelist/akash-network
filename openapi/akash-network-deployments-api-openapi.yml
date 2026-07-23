@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Akash Console Bids Deployments API
+  version: 1.0.0
+  description: 'REST API for the managed Akash Console. Deploy workloads to the
+
+    Akash decentralized cloud marketplace using managed wallets and
+
+    credit-card billing, without directly managing keys or AKT.
+
+    '
+  contact:
+    name: Akash Network
+    url: https://akash.network
+  license:
+    name: Documentation Terms
+    url: https://akash.network
+servers:
+- url: https://console-api.akash.network
+  description: Akash Console API production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Deployments
+  description: Create and manage SDL-based deployments.
+paths:
+  /v1/deployments:
+    post:
+      tags:
+      - Deployments
+      summary: Create a deployment
+      description: Submit an SDL deployment manifest to create a new deployment on the Akash network.
+      operationId: createDeployment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sdl:
+                  type: string
+                  description: Stack Definition Language (SDL) manifest as YAML text.
+              required:
+              - sdl
+      responses:
+        '200':
+          description: Deployment created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dseq:
+                    type: string
+                    description: Deployment sequence identifier.
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Akash Console API key passed on every request.
