@@ -1,0 +1,18 @@
+{
+  "provider": "akash-network",
+  "sources": [
+    "akash-network-bids-api-openapi.yml",
+    "akash-network-deployments-api-openapi.yml",
+    "akash-network-leases-api-openapi.yml"
+  ],
+  "outputs": [
+    "akash-network-bids-api-openapi.yml",
+    "akash-network-deployments-api-openapi.yml",
+    "akash-network-leases-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

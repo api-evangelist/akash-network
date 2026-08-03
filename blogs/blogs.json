@@ -2,6 +2,13 @@
   "repo": "akash-network",
   "feeds": [
     {
+      "source": "https://akash.network/blog.xml",
+      "feed_url": "https://akash.network/blog.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://akash.network/blog/",
       "feed_url": "https://akash.network/blog.xml",
       "title": "",
@@ -9,6 +16,6 @@
       "method": "discovered"
     }
   ],
-  "fetched": "2026-07-11T11:50:51Z",
-  "post_count": 27
+  "fetched": "2026-08-01T15:49:00Z",
+  "post_count": 58
 }
