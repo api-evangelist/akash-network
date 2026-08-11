@@ -188,6 +188,13 @@ apis:
   - type: OpenAPI
     url: openapi/akash-network-leases-api-openapi.yml
 common:
+  - type: Releases
+    url: https://github.com/akash-network/provider/releases
+  - type: ContributionGuide
+    url: https://github.com/akash-network/provider/blob/main/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/akash-network/provider/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/akash-network-agentic-access.yml
   - type: DomainSecurity
