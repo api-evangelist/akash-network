@@ -1,0 +1,141 @@
+{
+  "item": [
+    {
+      "id": "43981881-5c05-41dd-be3c-7ee526ecc6e7",
+      "name": "Bids",
+      "description": {
+        "content": "Retrieve bids placed by Akash providers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "647f193c-1b7a-4eb3-97f0-87fa2853fb6f",
+          "name": "List bids for a deployment",
+          "request": {
+            "name": "List bids for a deployment",
+            "description": {
+              "content": "Returns bids placed by providers for a given deployment sequence.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "bids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dseq",
+                  "value": "<string>",
+                  "description": "(Required) Deployment sequence identifier."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ca761b1-df55-445b-8407-3c063baf5c4a",
+              "name": "List of bids.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "bids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dseq",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://console-api.akash.network",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bd301b98-6da8-434c-8836-0d33c5fc773f",
+    "name": "Akash Console Bids API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the managed Akash Console. Deploy workloads to the\nAkash decentralized cloud marketplace using managed wallets and\ncredit-card billing, without directly managing keys or AKT.\n\n\nContact Support:\n Name: Akash Network",
+      "type": "text/plain"
+    }
+  }
+}

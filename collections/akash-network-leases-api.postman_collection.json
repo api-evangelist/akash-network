@@ -1,0 +1,142 @@
+{
+  "item": [
+    {
+      "id": "1caadf34-12a9-4cbe-9c3b-b9bc10190f62",
+      "name": "Leases",
+      "description": {
+        "content": "Accept bids and manage leases with providers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c49d5f6b-8943-45dd-9121-8e6799cb8035",
+          "name": "Accept a bid and create a lease",
+          "request": {
+            "name": "Accept a bid and create a lease",
+            "description": {
+              "content": "Accept a provider bid to create a lease that runs the deployment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "leases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dseq\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"gseq\": \"<integer>\",\n  \"oseq\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9a6b1ca4-c19d-4e33-a681-91150ed504f3",
+              "name": "Lease created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "leases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dseq\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"gseq\": \"<integer>\",\n  \"oseq\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://console-api.akash.network",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2ade7967-c1ad-4bc4-b527-c1242a81fc02",
+    "name": "Akash Console Bids Leases API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the managed Akash Console. Deploy workloads to the\nAkash decentralized cloud marketplace using managed wallets and\ncredit-card billing, without directly managing keys or AKT.\n\n\nContact Support:\n Name: Akash Network",
+      "type": "text/plain"
+    }
+  }
+}
