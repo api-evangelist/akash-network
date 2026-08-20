@@ -46,6 +46,10 @@ apis:
   baseURL: https://console.akash.network/
   tags:
   - REST
+  - Deployment
+  - Managed
+  tags_raw:
+  - REST
   - Deployments
   - Managed
   properties:
@@ -89,6 +93,10 @@ apis:
   humanURL: https://akash.network/docs/providers/
   baseURL: https://github.com/akash-network/provider
   tags:
+  - Provider
+  - Leases
+  - Deployment
+  tags_raw:
   - Provider
   - Leases
   - Deployments
@@ -173,6 +181,8 @@ apis:
   humanURL: https://akash.network/docs/api-documentation/console-api
   baseURL: https://console.akash.network/
   tags:
+  - Deployment
+  tags_raw:
   - Deployments
   properties:
   - type: OpenAPI
