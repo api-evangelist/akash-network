@@ -11,6 +11,19 @@ description: >-
   Cosmos-SDK chain accessible over gRPC / REST / RPC, the Provider API on each
   provider, an official Akash Blockchain SDK in Go and JavaScript/TypeScript,
   the Provider Console, and the akash CLI.
+deliveryModel:
+  model: self-hosted
+  license: Apache-2.0
+  open_source: true
+  commercial: false
+  callable_host: true
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
