@@ -211,6 +211,9 @@ apis:
   - type: OpenAPI
     url: openapi/akash-network-leases-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/akash-network-capability-edges.yml
+    name: Akash Network Business Capability Map
   - type: Releases
     url: https://github.com/akash-network/provider/releases
   - type: ContributionGuide
